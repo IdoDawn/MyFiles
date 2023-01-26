@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Hello {{ logged }}</h1>
+	<h1>{{ message }}</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>File Name</th>
+				<th>Uploaded by</th>
+				<th>Date Uploaded</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fileObj in files %}
+			<tr>
+				<td>{{ fileObj['name'] }}</td>
+				<td>{{ fileObj['    '] }}</td>
+				<td>{{ fileObj['mTime'] }}</td>
+				<td><a href="{{ url_for('download', filename=fileObj['name']) }}">download</td>
+			{% endfor %}
+
+
+
+
+		</tbody>
+	</table>
+
+	
+
+{% endblock content %}
